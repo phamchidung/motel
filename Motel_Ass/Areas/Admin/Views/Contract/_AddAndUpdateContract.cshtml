@@ -1,0 +1,122 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modal-add-update-contract" role="dialog">
+    <div class="modal-dialog modal-xl">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm/Sửa hợp đồng</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <label for="select-room">Chọn tên phòng</label>
+                <select class="form-control w-25" id="select-room">
+                </select>
+                <br />
+                <label for="select-guest">Chọn khách thuê</label>
+                <div class="border d-flex" id="select-guest">
+                    <div id="guest-left" class="border w-50">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td>#</td>
+                                            <td>Tên khách thuê</td>
+                                            <td>SĐT</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbl-contract-guest">
+                                    </tbody>
+                                </table>
+
+                                <script id="data-contract-guest" type="text/template">
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-primary btn-select-guest" data-id="{{ID}}">Chọn</button>
+                                        </td>
+                                        <td>{{Name}}</td>
+                                        <td>{{Phone}}</td>
+                                    </tr>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="guest-right" class="border w-50">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tbl-guest-right" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td>#</td>
+                                            <td>Tên khách thuê</td>
+                                            <td>SĐT</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbl-contract-guest-selected">
+                                    </tbody>
+                                </table>
+
+                                <script id="data-contract-guest-selected" type="text/template">
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-primary btn-remove-guest" data-id="{{ID}}">Bỏ chọn</button>
+                                        </td>
+                                        <td>{{Name}}</td>
+                                        <td>{{Phone}}</td>
+                                    </tr>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="select-representative">Chọn người đại diện</label>
+                <select class="form-control w-25" id="select-representative">
+                </select>
+
+                <div class="form-group">
+                    <label for="txtDeposive">Tiền đặt cọc*:</label>
+                    <input type="text" class="form-control" name="txtDeposive" id="txtDeposive">
+                    <input type="hidden" id="hid-id-contract" value="0" />
+                </div>
+
+                <div class="form-group">
+                    <label for="txtDateStart">Ngày bắt đầu*:</label>
+                    <input type="date" class="form-control" name="txtDateStart" id="txtDateStart">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtDateStop">Ngày hết hạn*:</label>
+                    <input type="date" class="form-control" name="txtDateStop" id="txtDateStop">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPaymentPeriod">Kỳ thanh toán*:</label>
+                    <input type="text" class="form-control" name="txtPaymentPeriod" id="txtPaymentPeriod">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtDatePayNextPeriod">Ngày đóng tiền kỳ tới*:</label>
+                    <input type="text" class="form-control" name="txtDatePayNextPeriod" id="txtDatePayNextPeriod">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-contract" type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="data-name-room" type="text/template">
+    <option value="{{ID}}">{{Name}}</option>
+</script>
+
+<script id="data-representative" type="text/template">
+    <option value="{{ID}}">{{Name}}</option>
+</script>
+
+

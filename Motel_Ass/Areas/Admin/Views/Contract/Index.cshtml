@@ -1,0 +1,67 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section scripts{
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/assets/admin/js/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="~/assets/admin/js/controllers/contractController.js"></script>
+}
+
+@section header{
+    Hợp đồng thuê phòng
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button id="btn-add-contract" class="btn btn-success fa-pull-right my-4">
+            Thêm mới
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Phòng</td>
+                    <td>Người đại diện</td>
+                    <td>Ngày bắt đầu</td>
+                    <td>Ngày hết hạn</td>
+                    <td>Tiền đặt cọc</td>
+                    <td>#</td>
+                </tr>
+            </thead>
+            <tbody id="tbl-contract">
+            </tbody>
+        </table>
+
+        <script id="data-contract" type="text/template">
+            <tr>
+                <td>{{NameRoom}}</td>
+                <td>{{RepresentativeName}}</td>
+                <td>{{DateStart}}</td>
+                <td>{{DateStop}}</td>
+                <td>{{Deposive}}</td>
+                <td>
+                    <button class="btn btn-primary btn-edit-contract" data-id="{{ID}}">Sửa</button>
+                    <button class="btn btn-danger btn-delete-contract" data-id="{{ID}}">Xóa</button>
+                    <button class="btn btn-warning btn-extend-contract" data-id="{{ID}}">Gia hạn hợp đồng</button>
+                </td>
+            </tr>
+        </script>
+    </div>
+</div>
+
+<div id="pagination-contract-parent" class="pagination">
+    <ul id="pagination-contract" class="paginnation"></ul>
+</div>
+
+@RenderPage("_AddAndUpdateContract.cshtml")

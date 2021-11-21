@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section scripts{
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/assets/admin/js/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="~/assets/admin/js/controllers/billController.js"></script>
+}
+
+@section header{
+    Quản lý xuất hóa đơn
+}
+
+<div class="border">
+    <label for="month-Bill">Tháng xuất H.Đơn</label>
+    <input type="month" id="month-bill" />
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Xuất/Sửa</td>
+                    <td>Tháng/năm</td>
+                    <td>Phòng</td>
+                    <td>Người đại diện</td>
+                    <td>Loại hóa đơn</td>
+                    <td>Thành tiền</td>'
+                    <td>Ngày tạo</td>
+                    <td>Ngày T.Toán</td>
+                    <td>Đã T.Toán</td>
+                    <td>Sửa</td>
+                </tr>
+            </thead>
+            <tbody id="tbl-bill">
+            </tbody>
+        </table>
+
+        <script id="data-bill" type="text/template">
+            <tr>
+                <td>
+                    <button  data-idMotel="{{ID_Motel}}" class="btn btn-success fa-pull-right my-4 btn-export-bill">
+                        Xuất H.Đơn
+                    </button>
+                </td>
+                <td>{{BillOfMonth}}</td>
+                <td>{{NameRoom}}</td>
+                <td>{{RepresentativeGuest}}</td>
+                <td>{{TypeOfBill}}</td>
+                <td>{{TotalMoney}}</td>
+                <td>{{CreatedDate}}</td>
+                <td>{{PayDate}}</td>
+                <td>
+                    <input type="checkbox" class="cbPaid" name="cbPaid" data-id="{{ID_Motel}}" />
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-edit-bill" data-id="{{ID_Motel}}">Sửa</button>
+                </td>
+            </tr>
+        </script>
+    </div>
+</div>
+
+<div id="pagination-contract-parent" class="pagination">
+    <ul id="pagination-contract" class="paginnation"></ul>
+</div>
+
+@RenderPage("_ExportBill.cshtml")
+

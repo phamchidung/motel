@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section scripts{
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/assets/admin/js/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="~/assets/admin/js/controllers/homeController.js"></script>
+}
+
+
+@section header{
+    Quản lý phòng trọ
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button id="btnAddMotel" class="btn btn-success fa-pull-right my-4">
+            Thêm mới
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Thiết bị</td>
+                    <td>Tên phòng</td>
+                    <td>Tầng</td>
+                    <td>Giá</td>
+                    <td>Số người tối đa</td>
+                    <td>Diện tích</td>
+                    <td>Trạng thái phòng</td>
+                    <td>#</td>
+                </tr>
+            </thead>
+            <tbody id="tblMotelRoom">
+            </tbody>
+        </table>
+
+        <script id="data-motelRoom" type="text/template">
+            <tr>
+                <td>
+                    <button class="btn btn-primary btn-check-device" data-id="{{ID}}">Thiết bị</button>
+                    <button class="btn btn-success btn-add-device" data-id="{{ID}}">Thêm</button>
+                </td>
+                <td>{{Name}}</td>
+                <td>{{Floor}}</td>
+                <td>{{Price}}</td>
+                <td>{{MaxGuest}}</td>
+                <td>{{Square}}</td>
+                <td>{{{Status}}}</td>
+                <td>
+                    <button class="btn btn-primary btn-edit-motel" data-id="{{ID}}">Sửa</button>
+                    <button class="btn btn-danger btn-delete-motel" data-id="{{ID}}">Xóa</button>
+                </td>
+            </tr>
+        </script>
+    </div>
+</div>
+
+<div id="pagination-motel-parent" class="pagination">
+    <ul id="pagination-motel" class="paginnation"></ul>
+</div>
+
+@RenderPage("_AddAndUpdateMotel.cshtml")
+@RenderPage("_CheckDevice.cshtml")
+@RenderPage("_AddDeviceForRoom.cshtml")

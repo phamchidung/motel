@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motel_Ass", "Motel_Ass\Motel_Ass.csproj", "{81FFFF90-BD6E-47D5-A4A2-5219525E93D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{067AF029-6635-4E57-9E0B-FF257AB5C710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81FFFF90-BD6E-47D5-A4A2-5219525E93D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FFFF90-BD6E-47D5-A4A2-5219525E93D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FFFF90-BD6E-47D5-A4A2-5219525E93D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FFFF90-BD6E-47D5-A4A2-5219525E93D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067AF029-6635-4E57-9E0B-FF257AB5C710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067AF029-6635-4E57-9E0B-FF257AB5C710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067AF029-6635-4E57-9E0B-FF257AB5C710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067AF029-6635-4E57-9E0B-FF257AB5C710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E72782E8-1577-41C4-9589-03120B5A8368}
+	EndGlobalSection
+EndGlobal

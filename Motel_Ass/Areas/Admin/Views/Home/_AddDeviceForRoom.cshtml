@@ -1,0 +1,60 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modal-add-device" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm thiết bị vào phòng</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <form id="frmAddDevice" action="/action_page.php">
+                    <div class="form-group">
+                        <label for="select-device">Chọn thiết bị</label>
+                        <select class="form-control w-25" id="select-device">
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" id="hid-id-motel" value="0" />
+                        <label for="txtQuantity">Số lượng*:</label>
+                        <input type="text" class="form-control" name="txtQuantity" id="txtQuantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select-status-device">Trạng thái</label>
+                        <select class="form-control w-25" id="select-status-device">
+                            <option value="Mới">Mới</option>
+                            <option value="Cũ">Cũ</option>
+                            <option value="Hỏng">Hỏng</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdGuaranteeYes">Bảo hành:</label> <br />
+
+                        <input type="radio" id="rdGuaranteeYes" name="guarantee" value="true">
+                        <label for="rdGuaranteeYes">Còn</label>
+
+                        <input type="radio" id="rdGuaranteeNo" name="guarantee" value="false">
+                        <label for="rdGuaranteeNo">Không còn</label><br>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-device" type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script id="data-device" type="text/template">
+    <option value="{{ID2}}">{{Name2}}</option>
+</script>
+

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section scripts{
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/assets/admin/js/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="~/assets/admin/js/controllers/deviceController.js"></script>
+}
+
+@section header{
+    Quản lý thiết bị
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button id="btn-add-device" class="btn btn-success fa-pull-right my-4">
+            Thêm mới
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Tên thiết bị</td>
+                    <td>Đơn vị</td>
+                    <td>Giá</td>
+                    <td>Giá bồi thường</td>
+                    <td>Tổng số lượng</td>
+                    <td>#</td>
+                </tr>
+            </thead>
+            <tbody id="tbl-device">
+            </tbody>
+        </table>
+
+        <script id="data-device" type="text/template">
+            <tr>
+                <td>{{Name}}</td>
+                <td>{{Unit}}</td>
+                <td>{{Price}}</td>
+                <td>{{CompensationPrice}}</td>
+                <td>{{TotalQuantity}}</td>
+                <td>
+                    <button class="btn btn-primary btn-edit-device" data-id="{{ID}}">Sửa</button>
+                    <button class="btn btn-danger btn-delete-device" data-id="{{ID}}">Xóa</button>
+                </td>
+            </tr>
+        </script>
+    </div>
+</div>
+@RenderPage("_AddAndUpdateDevice.cshtml")

@@ -1,0 +1,141 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modal-export-bill" role="dialog">
+    <div class="modal-dialog modal-xl">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Xuất/Sửa hóa đơn</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <form id="frm-export-bill" action="/action_page.php">
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Tên DV</th>
+                                    <th>Đơn vị</th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>'
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiền nhà</td>
+                                    <td>Phòng</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtMotelPrice" name="txtMotelPrice" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtQuantityMotel" name="txtQuantityMotel" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtTotalMotelPrice" name="txtTotalMotelPrice" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tiền điện</td>
+                                    <td>Số(kWh)</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtElectrictPrice" name="txtElectrictPrice" />
+                                    </td>
+                                    <td>
+                                        <div class="container">
+                                            <div class="row">
+                                                <input type="text" class="form-control col-sm" id="txtNumberElecttricBefore" name="txtNumberElecttricBefore" placeholder="Số đầu"/>
+                                                <input type="text" class="form-control col-sm" id="txtNumberElecttricNow" name="txtNumberElecttricNow" placeholder="Số cuối"/>
+                                                <input type="text" class="form-control col-sm" id="txtNumberElecttricUsed" name="txtNumberElecttricUsed" placeholder="Số tiêu thụ"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtTotalElectrictPrice" name="txtTotalElectrictPrice" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tiền nước</td>
+                                    <td>Khối(m3)</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtWaterPrice" name="txtWaterPrice" />
+                                    </td>
+                                    <td>
+                                        <div class="container">
+                                            <div class="row">
+                                                <input type="text" class="form-control col-sm" id="txtNumberWaterBefore" name="txtNumberWaterBefore" placeholder="Số đầu"/>
+                                                <input type="text" class="form-control col-sm" id="txtNumberWaterNow" name="txtNumberWaterNow" placeholder="Số cuối"/>
+                                                <input type="text" class="form-control col-sm" id="txtNumberWaterUsed" name="txtNumberWaterUsed" placeholder="Số tiêu thụ"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtTotalWaterPrice" name="txtTotalWaterPrice" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vệ sinh</td>
+                                    <td>Người</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtSanitaryPrice" name="txtSanitaryPrice" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtQuantitySanitary" name="txtQuantitySanitary" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtTotalSanitaryPrice" name="txtTotalSanitaryPrice" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Internet</td>
+                                    <td>Người</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtInternetPrice" name="txtInternetPrice" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtQuantityInternet" name="txtQuantityInternet" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtTotalInternetPrice" name="txtTotalInternetPrice" readonly />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtTotalService">Tổng tiền dịch vụ</label>
+                        <input type="text" class="form-control" name="txtTotalService" id="txtTotalService" readonly>
+                        <input type="hidden" id="hid-id-bill" value="0" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtOther">Chi phí khác</label>
+                        <input type="text" class="form-control" name="txtOther" id="txtOther">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtTotal">Tổng tiền</label>
+                        <input type="text" class="form-control" name="txtTotal" id="txtTotal" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtNote">Chú thích</label> <br />
+                        <textarea id="txtNote" name="txtNote" rows="4" cols="100">
+
+                        </textarea>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-bill" type="submit" class="btn btn-primary">Lưu</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

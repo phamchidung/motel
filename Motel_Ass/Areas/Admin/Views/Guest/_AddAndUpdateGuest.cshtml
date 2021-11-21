@@ -1,0 +1,106 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modal-add-update-guest" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm/Sửa khách thuê</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <form id="frmSaveGuest" action="/action_page.php">
+                    <div class="form-group">
+                        <label for="txtNameGuest">Tên khách thuê*:</label>
+                        <input type="text" class="form-control" name="txtNameGuest" id="txtNameGuest">
+                        <input type="hidden" id="hid-id-guest" value="0" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtPhone">Số điện thoại*:</label>
+                        <input type="text" class="form-control" name="txtPhone" id="txtPhone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtDob">Ngày sinh:</label>
+                        <input type="date" class="form-control" name="txtDob" id="txtDob">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtCardID">Số CMND/CCCD*:</label>
+                        <input type="text" class="form-control" name="txtCardID" id="txtCardID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtLocationGetCard">Nơi cấp:</label>
+                        <input type="text" class="form-control" name="txtLocationGetCard" id="txtLocationGetCard">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtDateGetCard">Ngày cấp:</label>
+                        <input type="date" class="form-control" name="txtDateGetCard" id="txtDateGetCard">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtHousehold">Hộ khẩu:</label>
+                        <input type="text" class="form-control" name="txtHousehold" id="txtHousehold">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdMale">Giới tính:</label> <br />
+
+                        <input type="radio" id="rdMale" name="gender" value="true">
+                        <label for="rdMale">Nam</label>
+
+                        <input type="radio" id="rdFemale" name="gender" value="false">
+                        <label for="rdFemale">Nữ</label><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtEmail">Email:</label>
+                        <input type="text" class="form-control" name="txtEmail" id="txtEmail">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdStudent">Nghề nghiệp:</label> <br />
+
+                        <input type="radio" id="rdStudent" name="job" value="Sinh viên">
+                        <label for="rdStudent">Sinh viên</label>
+
+                        <input type="radio" id="rdWorker" name="job" value="Người đi làm">
+                        <label for="rdWorker">Người đi làm</label><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtJobLocation">Nơi công tác:</label>
+                        <input type="text" class="form-control" name="txtJobLocation" id="txtJobLocation">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtTemporaryResidentFrom">Tạm trú từ*:</label>
+                        <input type="date" class="form-control" name="txtTemporaryResidentFrom" id="txtTemporaryResidentFrom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtTemporaryResidentTo">Tạm trú đến*:</label>
+                        <input type="date" class="form-control" name="txtTemporaryResidentTo" id="txtTemporaryResidentTo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtReasonTemporaryResident">Lý do tạm trú*:</label>
+                        <input type="text" class="form-control" name="txtReasonTemporaryResident" id="txtReasonTemporaryResident">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-guest" type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

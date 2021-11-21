@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section scripts{
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/assets/admin/js/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="~/assets/admin/js/controllers/guestController.js"></script>
+}
+
+@section header{
+    Quản lý khách thuê
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button id="btn-add-guest" class="btn btn-success fa-pull-right my-4">
+            Thêm mới
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Chi tiết</td>
+                    <td>Tên khách thuê</td>
+                    <td>SĐT</td>
+                    <td>Trạng Thái</td>
+                    <td>Phòng</td>
+                    <td>Đại diện phòng</td>
+                    <td>#</td>
+                </tr>
+            </thead>
+            <tbody id="tbl-guest">
+            </tbody>
+        </table>
+
+        <script id="data-guest" type="text/template">
+            <tr>
+                <td><button class="btn btn-primary btn-detail-guest" data-id="{{ID}}">Chi tiết</button></td>
+                <td>{{Name}}</td>
+                <td>{{Phone}}</td>
+                <td>{{Staying}}</td>
+                <td>{{MotelRoom}}</td>
+                <td>{{Representative}}</td>
+                <td>
+                    <button class="btn btn-primary btn-edit-device" data-id="{{ID}}">Sửa</button>
+                    <button class="btn btn-danger btn-delete-device" data-id="{{ID}}">Xóa</button>
+                </td>
+            </tr>
+        </script>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-detail-guest" role="dialog">
+    <div class="modal-dialog modal-xl">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Chi tiết khách thuê trọ</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Giới tính</td>
+                            <td>Số CMND/CCCD</td>
+                            <td>Nơi cấp</td>
+                            <td>Ngày cấp</td>
+                            <td>Nghề nghiệp</td>
+                            <td>Ngày sinh/td>
+                            <td>Email</td>
+                            <td>Nơi công tác</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-detail-guest">
+                    </tbody>
+                </table>
+
+                <script id="data-detail-guest" type="text/template">
+                    <tr>
+                        <td>{{Gender}}</td>
+                        <td>{{CardID}}</td>
+                        <td>{{LocationGetCard}}</td>
+                        <td>{{DateGetCard}}</td>
+                        <td>{{Job}}</td>
+                        <td>{{Dob}}</td>
+                        <td>{{{Email}}}</td>
+                        <td>{{JobLocation}}</td>
+                    </tr>
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="pagination-guest-parent" class="pagination">
+    <ul id="pagination-guest" class="paginnation"></ul>
+</div>
+
+@RenderPage("_AddAndUpdateGuest.cshtml")
+
+
